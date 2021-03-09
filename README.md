@@ -2,7 +2,7 @@
 
 Para crear una máquina de estados en C#, se inicia con un diagrama de estados.
 
-![](images/State machine.png)
+![](https://github.com/areyesram/StateMachine/blob/master/images/State%20machine.png?raw=true)
 
 * Cada estado tiene un número definido de acciones válidas.
 * Una acción en un determinado estado, puede llevar a la máquina a un estado diferente, o al mismo estado.
