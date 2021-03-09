@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/StateMachine/v14
+/StateMachine/bin/Debug
+/StateMachine/obj/Debug
