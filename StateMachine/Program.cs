@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace StateMachine
+namespace Ventus
 {
     internal static class Program
     {
         [STAThread]
         private static void Main()
         {
-            Application.Run(new Form1());
+            Application.Run(new MainForm());
         }
     }
 }

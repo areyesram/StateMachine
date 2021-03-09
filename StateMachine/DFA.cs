@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace StateMachine
+namespace Ventus
 {
     internal class DFA
     {
@@ -9,6 +9,11 @@ namespace StateMachine
             CurrentState = State.Creada;
         }
 
+        /// <summary>
+        /// Esta es toda la lógica de la máquina de estados
+        /// </summary>
+        /// <param name="action">Qué acción aplicar sobre el estado actual.</param>
+        /// <returns>True, si aplicó la acción; False si es una acción no válida.</returns>
         internal bool GoNext(Action action)
         {
             var trans = TransitionMatrix.FirstOrDefault(o => o.CurrentState == CurrentState && o.Action == action);
@@ -28,7 +33,7 @@ namespace StateMachine
             new Transition(State.PorContabilizar, Action.Contabilizar, State.Finalizada),
             new Transition(State.PorRevisar, Action.Devolver, State.Creada),
             new Transition(State.PorAutorizar, Action.Rechazar, State.Rechazada),
-            new Transition(State.Rechazada, Action.Solicitar, State.Reenviada),
+            new Transition(State.Rechazada, Action.SolicitarRevision, State.Reenviada),
             new Transition(State.Reenviada, Action.Autorizar, State.PorContabilizar),
             new Transition(State.Reenviada, Action.Rechazar, State.RechazadaFinal),
             new Transition(State.Rechazada, Action.Cerrar, State.RechazadaFinal),
@@ -69,7 +74,7 @@ namespace StateMachine
             Contabilizar,
             Devolver,
             Rechazar,
-            Solicitar,
+            SolicitarRevision,
             Cerrar
         }
     }

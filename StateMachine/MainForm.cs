@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace StateMachine
+namespace Ventus
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
 
         private DFA _dfa = new DFA();
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
             var actions = Enum.GetNames(typeof(DFA.Action));
             var h = pnlActions.Height / actions.Length;
@@ -24,7 +24,7 @@ namespace StateMachine
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCreate_Click(object sender, EventArgs e)
         {
             _dfa = new DFA();
             ShowCurrentState();
